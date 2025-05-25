@@ -8,7 +8,7 @@ public class InventoryUI: MonoBehaviour
     private List<Image> slotImages;
     private List<Image> slotBackgrounds;
     private Item[] slotItems;
-    public Item SelectedItem { get; private set; }
+    public Item selectedItem { get; private set; }
     private int maxSlots = 5;
     private int selectedSlot = -1;
     private Color normalColor = Color.white;
@@ -76,7 +76,7 @@ public class InventoryUI: MonoBehaviour
         selectedSlot = index;
         slotBackgrounds[selectedSlot].color = selectedColor;
         // Update selected item reference
-        SelectedItem = slotItems[selectedSlot];
+        selectedItem = slotItems[selectedSlot];
     }
 
     public void AddItem(Item item)
