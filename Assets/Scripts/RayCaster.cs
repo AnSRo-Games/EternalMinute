@@ -73,7 +73,8 @@ public class RayCaster : MonoBehaviour
                     toggleHighlight(itemComponent, true);
                 }
 
-                if (InteractWithItem(itemComponent))
+                if (Mouse.current.leftButton.wasPressedThisFrame
+                    && InteractWithItem(itemComponent))
                 {
                     // If interaction requires deleting item, reset oldTarget and oldItem
                     oldTarget = null;
@@ -118,38 +119,36 @@ public class RayCaster : MonoBehaviour
 
     private bool InteractWithItem(Item item)
     {
+        
         switch (item.itemType)
         {
             case Item.ItemType.pickLock:
             case Item.ItemType.key:
-                if (Mouse.current.leftButton.wasPressedThisFrame)
-                {
-                    inventory.AddItem(item);
-                    Debug.Log($"Added {item.itemType} to inventory.");
-                    Destroy(item.deletableObject);
-                    Debug.Log($"Item {item.itemType} destroyed.");
-                }
+                inventory.AddItem(item);
+                Debug.Log($"Added {item.itemType} to inventory.");
+                Destroy(item.deletableObject);
+                Debug.Log($"Item {item.itemType} destroyed.");
+                
                 return true; // Interaction successful
+                
             case Item.ItemType.cabinet:
-                if (Mouse.current.leftButton.wasPressedThisFrame)
+                
+                if (inventory.selectedItem != null &&
+                    (inventory.selectedItem.itemType == Item.ItemType.pickLock ||
+                    inventory.selectedItem.itemType == Item.ItemType.key))
                 {
-                    if (inventory.selectedItem != null &&
-                        (inventory.selectedItem.itemType == Item.ItemType.pickLock ||
-                        inventory.selectedItem.itemType == Item.ItemType.key))
-                    {
-                        // Logic to open the cabinet
-                        Debug.Log($"Opened cabinet with {inventory.selectedItem.itemType}.");
-                        testScreen.SetActive(true); // Show the test screen
-                        return true; // Interaction successful
-                    }
-                    else
-                    {
-                        Time.timeScale = 0f; // Pause the game
-                        GameObject dialog = Instantiate(dialogueTextPrefab, canvas);
-                        dialog.GetComponent<TextWriter>().Init("You need a key or a lock pick to open this cabinet.");
-                        Debug.LogWarning("No valid item selected to open the cabinet.");
-                        Time.timeScale = 1f; // Resume the game
-                    }
+                    // Logic to open the cabinet
+                    Debug.Log($"Opened cabinet with {inventory.selectedItem.itemType}.");
+                    testScreen.SetActive(true); // Show the test screen
+                    return true; // Interaction successful
+                }
+                else
+                {
+                    Time.timeScale = 0f; // Pause the game
+                    GameObject dialog = Instantiate(dialogueTextPrefab, canvas);
+                    dialog.GetComponent<TextWriter>().Init("You need a key or a lock pick to open this cabinet.");
+                    Debug.LogWarning("No valid item selected to open the cabinet.");
+                    Time.timeScale = 1f; // Resume the game
                 }
                 
                 return false; // Interaction not handled
