@@ -20,6 +20,18 @@ public class RayCaster : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        if (inventory == null)
+        {
+            inventory = FindFirstObjectByType<InventoryUI>();
+            if (inventory == null)
+            {
+                Debug.LogError("InventoryUI not found in scene. Please assign it in the inspector.");
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -46,19 +58,26 @@ public class RayCaster : MonoBehaviour
                 if (Mouse.current.leftButton.wasPressedThisFrame)
                 {
                     // Perform any action with the hit object
-                    Destroy(hitObject);
-                    hitObject = null;
-                    inventory.AddItem(hitObject.GetComponent<Item>());
-                    Debug.Log($"Added {hitObject.name} to inventory.");
+                    // Check if it has an Item component
+                    if (hitObject.GetComponent<Item>() != null)
+                    {
+                        Destroy(hitObject);
+                        Debug.Log($"Item {hitObject.GetComponent<Item>().itemType} destroyed.");
+                        inventory.AddItem(hitObject.GetComponent<Item>());
+                        Debug.Log($"Added {hitObject.name} to inventory.");
+                    }
                 }
             }
             oldTarget = hitObject;
 
             // Destroy(hitObject);
-            
+
             // Do something with the object that was hit by the raycast.
-        } else{ 
-            if(oldTarget != null){
+        }
+        else
+        {
+            if (oldTarget != null)
+            {
                 Material mat = oldTarget.GetComponent<Renderer>().material;
                 mat.DisableKeyword("_EMISSION");
             }
