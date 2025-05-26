@@ -50,6 +50,15 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
+		[Space(5)]
+		[Header("Crouch")]
+		[Tooltip("Height of the character when crouched")]
+		[SerializeField] private float crouchHeight = 0.1f;
+		[Tooltip("Camera Y offset when crouched")]
+		[SerializeField] private float crouchCameraOffset = -0.2f;
+		private float standHeight;
+		private float standCameraOffset;
+		private bool isCrouched = false;
 
 		// cinemachine
 		private float _cinemachineTargetPitch;
@@ -108,10 +117,16 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+			// initialize crouch/stand values
+			standHeight = _controller.height;
+			standCameraOffset = CinemachineCameraTarget.transform.localPosition.y;
+			if (crouchHeight <= 0f)
+				crouchHeight = standHeight / 2f;
 		}
 
 		private void Update()
 		{
+			ProcessCrouch();
 			GroundedCheck();
 			JumpAndGravity();
 			Move();
@@ -124,9 +139,8 @@ namespace StarterAssets
 
 		private void GroundedCheck()
 		{
-			// set sphere position, with offset
-			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
-			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
+			// rely on CharacterController's grounded state
+			Grounded = _controller.isGrounded;
 		}
 
 		private void CameraRotation()
@@ -153,8 +167,17 @@ namespace StarterAssets
 
 		private void Move()
 		{
-			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			// set target speed based on move speed, sprint speed, and crouch state
+			float targetSpeed;
+			if (isCrouched)
+			{
+				// no sprint while crouched
+				targetSpeed = MoveSpeed;
+			}
+			else
+			{
+				targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			}
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -251,6 +274,34 @@ namespace StarterAssets
 			if (lfAngle < -360f) lfAngle += 360f;
 			if (lfAngle > 360f) lfAngle -= 360f;
 			return Mathf.Clamp(lfAngle, lfMin, lfMax);
+		}
+
+		/// <summary>
+		/// Handles crouch input and toggles controller height and camera position.
+		/// </summary>
+		private void ProcessCrouch()
+		{
+			if (Keyboard.current == null)
+				return;
+			// hold Left Shift to crouch only if grounded
+			if (Keyboard.current.leftShiftKey.isPressed && !isCrouched && Grounded)
+			{
+				_controller.height = crouchHeight;
+				_controller.center = new Vector3(0f, crouchHeight * 0.5f, 0f);
+				Vector3 camPos = CinemachineCameraTarget.transform.localPosition;
+				camPos.y = crouchCameraOffset;
+				CinemachineCameraTarget.transform.localPosition = camPos;
+				isCrouched = true;
+			}
+			else if (!Keyboard.current.leftShiftKey.isPressed && isCrouched)
+			{
+				_controller.height = standHeight;
+				_controller.center = new Vector3(0f, standHeight * 0.5f, 0f);
+				Vector3 camPos = CinemachineCameraTarget.transform.localPosition;
+				camPos.y = standCameraOffset;
+				CinemachineCameraTarget.transform.localPosition = camPos;
+				isCrouched = false;
+			}
 		}
 
 		private void OnDrawGizmosSelected()
