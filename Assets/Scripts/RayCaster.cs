@@ -2,6 +2,7 @@ using NUnit.Framework.Constraints;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement; // Needed for scene loading
 public class RayCaster : MonoBehaviour
 {
 
@@ -139,7 +140,7 @@ public class RayCaster : MonoBehaviour
                     {
                         // Logic to open the cabinet
                         Debug.Log($"Opened cabinet with {inventory.selectedItem.itemType}.");
-                        testScreen.SetActive(true); // Show the test screen
+                        SceneManager.LoadScene("2nd scene");  //Name of the scene as argument
                         return true; // Interaction successful
                     }
                     else
