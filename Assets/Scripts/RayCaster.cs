@@ -124,18 +124,17 @@ public class RayCaster : MonoBehaviour
         {
             case Item.ItemType.pickLock:
             case Item.ItemType.key:
-                inventory.AddItem(item);
+                inventory.AddItem(item); // Add a copy of the item to the inventory
                 Debug.Log($"Added {item.itemType} to inventory.");
                 Destroy(item.deletableObject);
-                Debug.Log($"Item {item.itemType} destroyed.");
                 
                 return true; // Interaction successful
                 
             case Item.ItemType.cabinet:
+                Debug.Log($"Attempting to open cabinet with {inventory.selectedItem?.itemType}.");
                 
                 if (inventory.selectedItem != null &&
-                    (inventory.selectedItem.itemType == Item.ItemType.pickLock ||
-                    inventory.selectedItem.itemType == Item.ItemType.key))
+                (inventory.selectedItem.itemType == Item.ItemType.key || inventory.selectedItem.itemType == Item.ItemType.pickLock))
                 {
                     // Logic to open the cabinet
                     Debug.Log($"Opened cabinet with {inventory.selectedItem.itemType}.");

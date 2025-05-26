@@ -11,9 +11,8 @@ public class Item : MonoBehaviour
     }
 
     public Renderer[] highlightRenderers; // Material to highlight the object
-
     public GameObject deletableObject; // Object to delete when picked up
-    public ItemType itemType;
+    [SerializeField] public ItemType itemType;
     public string itemName; // Name of the item
     public Sprite icon;
 
@@ -29,11 +28,4 @@ public class Item : MonoBehaviour
             }
         }
     }
-
-    public void ShowHint()
-    {
-        // Show a hint for the item, e.g., by enabling a UI element or displaying a message
-        Debug.Log($"Hint: {itemType} is nearby!");
-    }
-
 }
