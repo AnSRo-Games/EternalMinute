@@ -74,7 +74,8 @@ public class RayCaster : MonoBehaviour
                     toggleHighlight(itemComponent, true);
                 }
 
-                if (InteractWithItem(itemComponent))
+                if (Mouse.current.leftButton.wasPressedThisFrame
+                    && InteractWithItem(itemComponent))
                 {
                     // If interaction requires deleting item, reset oldTarget and oldItem
                     oldTarget = null;
@@ -119,20 +120,23 @@ public class RayCaster : MonoBehaviour
 
     private bool InteractWithItem(Item item)
     {
+        
         switch (item.itemType)
         {
             case Item.ItemType.pickLock:
             case Item.ItemType.key:
-                if (Mouse.current.leftButton.wasPressedThisFrame)
-                {
-                    inventory.AddItem(item);
-                    Debug.Log($"Added {item.itemType} to inventory.");
-                    Destroy(item.deletableObject);
-                    Debug.Log($"Item {item.itemType} destroyed.");
-                }
+                inventory.AddItem(item);
+                Debug.Log($"Added {item.itemType} to inventory.");
+                Destroy(item.deletableObject);
+                Debug.Log($"Item {item.itemType} destroyed.");
+                
                 return true; // Interaction successful
+                
             case Item.ItemType.cabinet:
-                if (Mouse.current.leftButton.wasPressedThisFrame)
+                
+                if (inventory.selectedItem != null &&
+                    (inventory.selectedItem.itemType == Item.ItemType.pickLock ||
+                    inventory.selectedItem.itemType == Item.ItemType.key))
                 {
                     if (inventory.selectedItem != null &&
                         (inventory.selectedItem.itemType == Item.ItemType.pickLock ||

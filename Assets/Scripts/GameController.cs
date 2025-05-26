@@ -6,11 +6,19 @@ using UnityEngine.InputSystem;
 public class GameController : MonoBehaviour
 {
     public GameObject timesUpScreen;
+    public GameObject crosshair;
     public string mainScene;
     public float timeLimit; // Set the time limit to 60 seconds
     private float minuteTimer = 0f;
     private float waitTimer = 0f;
     private bool isTimeUp = false;
+
+    void Start()
+    {
+        Time.timeScale = 1f; // Resume the game
+        Cursor.visible = false; // Show the cursor
+        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor
+    }
 
     // Update is called once per frame
     void Update()
@@ -39,6 +47,7 @@ public class GameController : MonoBehaviour
         isTimeUp = true; // Set the flag to indicate time is up
         Cursor.visible = true; // Show the cursor
         Cursor.lockState = CursorLockMode.None; // Unlock the cursor
+        crosshair.SetActive(false); // Hide the crosshair
     }
 
     public void restartGame()
@@ -50,5 +59,6 @@ public class GameController : MonoBehaviour
         minuteTimer = 0f; // Reset the timer
         Cursor.visible = false; // Show the cursor
         Cursor.lockState = CursorLockMode.Locked; // Lock the cursor
+        crosshair.SetActive(true); // Show the crosshair
     }
 }
