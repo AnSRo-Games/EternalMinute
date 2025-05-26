@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16860026da54450394f6a38fe250e740, type: 3}
-  m_Name: Typewriter
+  m_Name: Typewrite
   m_EditorClassIdentifier: 
   effectTag: 
   startCharIndex: 0
   charLength: 0
   animationType: 3
   fixedDuration: 0
-  durationPerChar: 0.03
-  timeBetweenChars: 0.065
+  durationPerChar: 0.01
+  timeBetweenChars: 0.08
   noDelayForChars: 0
   reverseCharOrder: 0
   easingCurve:
@@ -45,8 +45,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  clampBetween0And1: 1
-  timeType: 1
+  clampBetween0And1: 0
+  timeType: 0
   colorType: 2
   startColor: {r: 1, g: 1, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}

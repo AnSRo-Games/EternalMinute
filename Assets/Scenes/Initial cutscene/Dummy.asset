@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16860026da54450394f6a38fe250e740, type: 3}
-  m_Name: Typewriter
+  m_Name: Dummy
   m_EditorClassIdentifier: 
   effectTag: 
   startCharIndex: 0
   charLength: 0
   animationType: 3
   fixedDuration: 0
-  durationPerChar: 0.03
-  timeBetweenChars: 0.065
+  durationPerChar: 1
+  timeBetweenChars: 0
   noDelayForChars: 0
   reverseCharOrder: 0
   easingCurve:
@@ -28,7 +28,7 @@ MonoBehaviour:
       time: 0
       value: 0
       inSlope: 0
-      outSlope: 1
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
+      inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
@@ -46,10 +46,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   clampBetween0And1: 1
-  timeType: 1
+  timeType: 0
   colorType: 2
   startColor: {r: 1, g: 1, b: 1, a: 1}
-  endColor: {r: 1, g: 1, b: 1, a: 1}
+  endColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -83,4 +83,4 @@ MonoBehaviour:
   orientation: 0
   stride: 10
   startAlpha: 0
-  endAlpha: 1
+  endAlpha: 0
