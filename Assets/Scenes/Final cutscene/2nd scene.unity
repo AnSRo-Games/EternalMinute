@@ -446,9 +446,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "de\u2588th r\u2588\u2588u\u2588ts fr\u2588m \u2588\u2588 situ\u2588tio\u2588
-    wh\u2588r\u2588 t\u2588\u2588 defe\u2588d\u2588nt is d\u2588\u2588med \u2588\u2588
-    h\u2588v\u2588 l\u2588st c\u2588\u2588tr\u2588l. "
+  m_text: "de\u2588th resu\u2588ts fr\u2588m \u2588\u2588 situ\u2588tio\u2588 where
+    th\u2588 defendant is deemed \u2588\u2588 hav\u2588 l\u2588st contr\u2588l. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 553fbb2a7d6c04d9bae5e4c267f60a85, type: 2}
   m_sharedMaterial: {fileID: -5484475325105853923, guid: 00452d8b435b3419ab95d4e8cc36f3db, type: 2}
@@ -1270,9 +1269,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ".\u2588\u2588 is lawful f\u2588r \u2588 c\u2588tiz\u2588n to rep\u2588l
-    viol\u2588nc\u2588 w\u2588th vi\u2588\u2588ence to pr\u2588tect \u2588\u2588\u2588e\u2588ne's
-    lif\u2588 \u2588\u2588"
+  m_text: "Alex Carter h\u2588d the m\u2588ans and tra\u2588ning to k\u2588ll w\u2588th
+    no a\u2588ibi, not e\u2588en any m\u2588mory, th\u2588s c\u2588se is cl\u2588ar."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 553fbb2a7d6c04d9bae5e4c267f60a85, type: 2}
   m_sharedMaterial: {fileID: -5484475325105853923, guid: 00452d8b435b3419ab95d4e8cc36f3db, type: 2}
@@ -2698,8 +2696,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "...The key to this leg\u2588l defense is that it was reason\u2588ble for
-    \u2588he subject to belie\u2588e \u2588"
+  m_text: "...Th\u2588 det\u2588cti\u2588es gun an\u2588 bad\u2588e fo\u2588nd at
+    the sc\u2588ne, as h\u2588 himse\u2588f dic\u2588vered. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 553fbb2a7d6c04d9bae5e4c267f60a85, type: 2}
   m_sharedMaterial: {fileID: -5484475325105853923, guid: 00452d8b435b3419ab95d4e8cc36f3db, type: 2}
@@ -2951,8 +2949,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "d\u2588signated \u2588\u2588 absolute r\u2588moval\" \u2588\u2588\u2588 
-    outc\u2588st in the d\u2588se\u2588t"
+  m_text: "The hon\u2588orab\u2588e detec\u2588ive had n\u2588 mot\u2588ve, w\u2588th
+    the c\u2588rcums\u2588antial pro\u2588f f\u2588und on\u2588y in a c\u2588rrupt\u2588d
+    VR s\u2588mulat\u2588on. \u2588. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 553fbb2a7d6c04d9bae5e4c267f60a85, type: 2}
   m_sharedMaterial: {fileID: -5484475325105853923, guid: 00452d8b435b3419ab95d4e8cc36f3db, type: 2}
@@ -3125,7 +3124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2588\u2588\u2588\u2588Scapego\u2588t \u2588\u2588\u2588"
+  m_text: "Scapego\u2588t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 553fbb2a7d6c04d9bae5e4c267f60a85, type: 2}
   m_sharedMaterial: {fileID: -5484475325105853923, guid: 00452d8b435b3419ab95d4e8cc36f3db, type: 2}
@@ -3298,8 +3297,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "sinn\u2588rs \u2588\u2588\u2588 adm\u2588t \u2588he\u2588r guilt \u2588\u2588
-    confe\u2588s \u2588\u2588 sins, \u2588\u2588\u2588 fai\u2588h \u2588nd tr\u2588st"
+  m_text: "Th\u2588 victim was an o\u2588tspok\u2588n criti\u2588 of the d\u2588part\u2588ent,
+    and in pa\u2588ticul\u2588r of the ch\u2588ef of p\u2588lic"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 553fbb2a7d6c04d9bae5e4c267f60a85, type: 2}
   m_sharedMaterial: {fileID: -5484475325105853923, guid: 00452d8b435b3419ab95d4e8cc36f3db, type: 2}
@@ -3863,11 +3862,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\n\nVisEngine.RuntimeError:LogError: \nEffect exit not found. Available
-    effects: \n\n<color=#D9030C>\u2588\u2588\u2588 \u2588 \u2588 \u2588\u2588\u2588
-    \u2588\u2588 \u2588\u2588\u2588\u2588Scapego\u2588t \u2588\u2588 \u2588 \u2588\u2588\u2588\u2588\n\n<color=#009051>\u2588
-    \u2588\u2588\u2588   Justifiable homic\u2588de \u2588 \u2588\u2588\u2588 \u2588
-    \u2588\u2588\u2588 \u2588 \u2588\u2588\u2588 \u2588\u2588 \u2588 \u2588 \u2588\u2588
-    \u2588\u2588\u2588\u2588 \u2588 \u2588 \u2588\n"
+    effects: \n\n<color=#D9030C>The d\u2588etect\u2588ve is clearl\u2588 a sc\u2588pego\u2588t,
+    the pol\u2588ce d\u2588par\u2588ment set h\u2588m up for \u2588h\u2588 ch\u2588efs
+    cr\u2588me\n\n<color=#009051>\u2588e is \u2588 murd\u2588re\u2588, al\u2588ojl\u2588c
+    who lo\u2588t con\u2588l, mu\u2588t be pun\u2588sh\u2588d.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 553fbb2a7d6c04d9bae5e4c267f60a85, type: 2}
   m_sharedMaterial: {fileID: -5484475325105853923, guid: 00452d8b435b3419ab95d4e8cc36f3db, type: 2}

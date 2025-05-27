@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/Final cutscene/Gun and badge.unity
+    guid: e0c029e6b01bb4486a89ce997e704cbd
+  - enabled: 1
     path: Assets/Scenes/Final cutscene/2nd scene.unity
     guid: 92d5f831384db4bb8a700d71ecd8cd58
   - enabled: 1

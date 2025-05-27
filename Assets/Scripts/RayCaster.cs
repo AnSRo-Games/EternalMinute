@@ -125,39 +125,35 @@ public class RayCaster : MonoBehaviour
         {
             case Item.ItemType.pickLock:
             case Item.ItemType.key:
-                inventory.AddItem(item);
+                inventory.AddItem(item); // Add a copy of the item to the inventory
                 Debug.Log($"Added {item.itemType} to inventory.");
                 Destroy(item.deletableObject);
-                Debug.Log($"Item {item.itemType} destroyed.");
                 
                 return true; // Interaction successful
                 
             case Item.ItemType.cabinet:
+                Debug.Log($"Attempting to open cabinet with {inventory.selectedItem?.itemType}.");
                 
                 if (inventory.selectedItem != null &&
-                    (inventory.selectedItem.itemType == Item.ItemType.pickLock ||
-                    inventory.selectedItem.itemType == Item.ItemType.key))
-                {
-                    if (inventory.selectedItem != null &&
                         (inventory.selectedItem.itemType == Item.ItemType.pickLock ||
                         inventory.selectedItem.itemType == Item.ItemType.key))
-                    {
-                        // Logic to open the cabinet
-                        Debug.Log($"Opened cabinet with {inventory.selectedItem.itemType}.");
-                        SceneManager.LoadScene("Gun and badge");  //Name of the scene as argument
-                        return true; // Interaction successful
-                    }
-                    else
-                    {
-                        Time.timeScale = 0f; // Pause the game
-                        GameObject dialog = Instantiate(dialogueTextPrefab, canvas);
-                        dialog.GetComponent<TextWriter>().Init("You need a key or a lock pick to open this cabinet.");
-                        Debug.LogWarning("No valid item selected to open the cabinet.");
-                        Time.timeScale = 1f; // Resume the game
-                    }
+                {
+                    // Logic to open the cabinet
+                    Debug.Log($"Opened cabinet with {inventory.selectedItem.itemType}.");
+                    SceneManager.LoadScene("Gun and badge");  //Name of the scene as argument
+                    return true; // Interaction successful
+                }
+                else
+                {
+                    Time.timeScale = 0f; // Pause the game
+                    GameObject dialog = Instantiate(dialogueTextPrefab, canvas);
+                    dialog.GetComponent<TextWriter>().Init("You need a key or a lock pick to open this cabinet.");
+                    Debug.LogWarning("No valid item selected to open the cabinet.");
+                    Time.timeScale = 1f; // Resume the game
                 }
                 
                 return false; // Interaction not handled
+                
             default:
                 Debug.LogWarning($"Unknown item type: {item.itemType}");
                 return false; // Interaction not handled

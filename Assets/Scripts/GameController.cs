@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f; // Resume the game
-        Cursor.visible = false; // Show the cursor
+        Cursor.visible = false; // Hide the cursor
         Cursor.lockState = CursorLockMode.Locked; // Lock the cursor
     }
 
