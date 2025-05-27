@@ -17,6 +17,6 @@ public class IntroManager : MonoBehaviour
     public void LoadGame()
     {
         // Load the main game scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("1st Scene");
     }
 }
