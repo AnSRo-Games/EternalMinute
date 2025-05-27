@@ -6,8 +6,38 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Intro.unity
+    guid: 86fe46849d7bd41d9842c8cf50d6fc77
+  - enabled: 1
+    path: Assets/Scenes/Initial cutscene/1st scene.unity
+    guid: 79f2e1716cc7440939e26dc31bbbf6bc
+  - enabled: 1
+    path: Assets/Scenes/Initial cutscene/Animation 1st scene.unity
+    guid: 6ca7221d987bd4c28ae9c1413e1d91d5
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Final cutscene/Gun and badge.unity
+    guid: e0c029e6b01bb4486a89ce997e704cbd
+  - enabled: 1
+    path: Assets/Scenes/Final cutscene/2nd scene.unity
+    guid: 92d5f831384db4bb8a700d71ecd8cd58
+  - enabled: 1
+    path: Assets/Scenes/Final cutscene/Black.unity
+    guid: 536786e6e6fb5444e85b572eaee352a7
+  - enabled: 0
+    path: Assets/Scenes/Initial cutscene/Old scene/Initial Cutscene.unity
+    guid: 4f1705544578543c580e0b28415314c1
+  - enabled: 0
+    path: Assets/Scenes/1st hint.unity
+    guid: f73fc53ca92764a4e89e263fd0ab1267
+  - enabled: 0
+    path: Assets/Scenes/Initial cutscene/OLD Animation 1st scene.unity
+    guid: 4674217d6f0c24fccb1510423881568b
+  - enabled: 0
+    path: Assets/Scenes/VR room.unity
+    guid: 2cc19c3a0c2954e96af030447b0a9040
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
