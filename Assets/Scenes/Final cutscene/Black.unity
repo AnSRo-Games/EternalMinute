@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 406937213}
   - component: {fileID: 406937214}
   - component: {fileID: 406937215}
+  - component: {fileID: 406937216}
   m_Layer: 0
   m_Name: Sequence Manager
   m_TagString: Untagged
@@ -193,6 +194,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26596116b0d3c4c5a8977d1fc3201a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &406937216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406937211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3276a2c75a7e4f09a745becf960e02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeTime: 2
+  sceneName: MainScene
 --- !u!1 &1276448181
 GameObject:
   m_ObjectHideFlags: 0
