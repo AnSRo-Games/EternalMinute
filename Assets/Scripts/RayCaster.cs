@@ -144,7 +144,7 @@ public class RayCaster : MonoBehaviour
                     {
                         // Logic to open the cabinet
                         Debug.Log($"Opened cabinet with {inventory.selectedItem.itemType}.");
-                        SceneManager.LoadScene("2nd scene");  //Name of the scene as argument
+                        SceneManager.LoadScene("Gun and badge");  //Name of the scene as argument
                         return true; // Interaction successful
                     }
                     else
