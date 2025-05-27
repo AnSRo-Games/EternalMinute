@@ -14468,7 +14468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timesUpScreen: {fileID: 672112580}
-  crosshair: {fileID: 0}
+  crosshair: {fileID: 1680917365}
   mainScene: MainScene
   timeLimit: 60
 --- !u!1001 &1670804303

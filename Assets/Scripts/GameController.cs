@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     private float minuteTimer = 0f;
     private float waitTimer = 0f;
     private bool isTimeUp = false;
+    
 
     void Start()
     {
