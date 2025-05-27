@@ -2,6 +2,7 @@ using NUnit.Framework.Constraints;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement; // Needed for scene loading
 public class RayCaster : MonoBehaviour
 {
 
@@ -136,18 +137,23 @@ public class RayCaster : MonoBehaviour
                 if (inventory.selectedItem != null &&
                 (inventory.selectedItem.itemType == Item.ItemType.key || inventory.selectedItem.itemType == Item.ItemType.pickLock))
                 {
-                    // Logic to open the cabinet
-                    Debug.Log($"Opened cabinet with {inventory.selectedItem.itemType}.");
-                    testScreen.SetActive(true); // Show the test screen
-                    return true; // Interaction successful
-                }
-                else
-                {
-                    Time.timeScale = 0f; // Pause the game
-                    GameObject dialog = Instantiate(dialogueTextPrefab, canvas);
-                    dialog.GetComponent<TextWriter>().Init("You need a key or a lock pick to open this cabinet.");
-                    Debug.LogWarning("No valid item selected to open the cabinet.");
-                    Time.timeScale = 1f; // Resume the game
+                    if (inventory.selectedItem != null &&
+                        (inventory.selectedItem.itemType == Item.ItemType.pickLock ||
+                        inventory.selectedItem.itemType == Item.ItemType.key))
+                    {
+                        // Logic to open the cabinet
+                        Debug.Log($"Opened cabinet with {inventory.selectedItem.itemType}.");
+                        SceneManager.LoadScene("2nd scene");  //Name of the scene as argument
+                        return true; // Interaction successful
+                    }
+                    else
+                    {
+                        Time.timeScale = 0f; // Pause the game
+                        GameObject dialog = Instantiate(dialogueTextPrefab, canvas);
+                        dialog.GetComponent<TextWriter>().Init("You need a key or a lock pick to open this cabinet.");
+                        Debug.LogWarning("No valid item selected to open the cabinet.");
+                        Time.timeScale = 1f; // Resume the game
+                    }
                 }
                 
                 return false; // Interaction not handled
